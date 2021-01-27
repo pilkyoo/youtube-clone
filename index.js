@@ -8,7 +8,7 @@ const handleListen = ()=>{
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', function(req, res) {
-  res.send('hello world!!!');
+  res.send('Git test');
 });
 
 app.listen(4000, handleListen);
