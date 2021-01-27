@@ -3,7 +3,9 @@ import morgan from "morgan";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
-import { userRouter } from "./router";
+import userRouter  from "./routers/userRouter";
+import globalRouter from "./routers/globalRouter";
+import videoRouter from "./routers/videoRouter";
 
 var app = express();
 
@@ -13,10 +15,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(helmet());
 app.use(morgan("dev"));
 
-
-app.get('/', function(req, res) {
-  res.send('Git test');
-});
+app.use('/', globalRouter);
 app.use('/user', userRouter);
+app.use('/video', videoRouter);
 
 export default app;
