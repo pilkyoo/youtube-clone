@@ -1,4 +1,5 @@
 extends layouts/main 
 
 block content
-    h1 Video
+    each item in videos
+        h1= item.title 
